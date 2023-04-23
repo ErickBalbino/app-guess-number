@@ -1,9 +1,10 @@
 import { TextInput, View, StyleSheet, Alert } from "react-native";
 import { useState } from "react";
+import Colors from "../utils/colors";
 
 import PrimaryButton from "../components/PrimaryButton";
 
-const StartGame = () => {
+const StartGame = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const numberInputHandler = (text) => {
@@ -24,7 +25,7 @@ const StartGame = () => {
       );
     }
 
-    console.log("SUCCESS");
+    onPickNumber(chosenNumber);
   };
 
   return (
